@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends "Parent.html" %}
+    <meta charset="UTF-8">
+    {% block head %}
+        {% block title %} aviation things app {% endblock %}
+    {% endblock %}
+
+</head>
+<body>
+{% block main %}
+    <h1> Welcome to the aviation things app </h1>
+    <p>Click on a <span style="color:blue;">link</span> to the left to continue</p>
+    <img src="/static/source.gif" alt=""width="100%">
+{% endblock %}
+</body>
+</html>

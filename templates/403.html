@@ -1,0 +1,22 @@
+
+<html lang="en">
+<head>
+    {% extends "Parent.html" %}
+    <meta charset="UTF-8">
+    {% block head %}
+        {% block title %}403{% endblock %}
+    {% endblock %}
+
+</head>
+<body>
+{% block main %}
+    <div id="block">
+    <h1 class="error"> Forbidden 403 Error </h1>
+    <h1 class="error"> Sorry =( </h1>
+    <img src="/static/world-2.png" alt="plane"height="30px"width="30px">
+    </div>
+     <img src="/static/airplaneE.gif" alt="plane"width="100%">
+{% endblock %}
+
+</body>
+</html>

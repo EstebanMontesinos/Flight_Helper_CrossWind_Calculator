@@ -1,0 +1,164 @@
+body {
+    font-family: "Lato", sans-serif;
+    background-color: white;
+}
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:deepskyblue;
+    border: deepskyblue;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 6px 6px 6px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: blue;
+}
+
+.main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+}
+.error{
+    color:black;
+}
+
+div.content {
+  margin-left: 25%;
+  padding: 1px 16px;
+  height: 1000px;
+}
+div#block{
+    background-color: whitesmoke;
+}
+h1{
+    font-family: "Courier New";
+    color:black;
+}
+p{
+    font-family: "Courier New";
+    color:black;
+}
+.button{
+    display: inline-block;
+  border-radius: 4px;
+  background-color: deepskyblue;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 10px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.button:hover{
+    color: blue;
+}
+.button:active{
+    color: chartreuse;
+}
+#logb{
+    display: inline-block;
+  border-radius: 4px;
+  background-color:white;
+  border: none;
+  color: black;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 100%;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+#logb:hover{
+    color: blue;
+}
+#logb:active{
+    color: chartreuse;
+}
+table, th, td {
+  border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+    background-color: deepskyblue;
+}
+table#t01 tr:nth-child(even) {
+  background-color: blue;
+}
+table#t01 tr:nth-child(odd) {
+ background-color: blue;
+}
+table#t01 th {
+  background-color:deepskyblue ;
+  color: white;
+}
+.button1{
+     display: inline-block;
+  border-radius: 4px;
+  background-color:white;
+  border: none;
+  color: deepskyblue;
+  text-align: center;
+  font-size: 10px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+.button1 span{
+    cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button1 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.button1 :hover span {
+  padding-right: 25px;
+}
+.button1 :hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.button1:hover{
+    color: blue;
+}
+.button1 :active{
+    color: chartreuse;
+}
+
+

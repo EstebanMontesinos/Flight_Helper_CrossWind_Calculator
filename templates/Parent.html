@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Style.css') }}">
+    <title>{%  block title %}{% endblock %} </title>
+</head>
+<body>
+<div class="sidenav">
+    <a href="/">Home</a>
+    <a href="/NavAcc">Account</a>
+    <a href="/NavCross">Cross wind calculator</a>
+    <a href="/NavLog">Logbook</a>
+    <br>
+    <br>
+     <form action="/logout">
+    <input id="logb" type="submit" value="Logout">
+    </form>
+
+
+</div>
+<div class="main">
+    {% block main %}
+    {% endblock %}
+</div>
+
+</body>
+</html>

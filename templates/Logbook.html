@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends "Parent.html" %}
+    <meta charset="UTF-8">
+    {% block head %}
+        {% block title %} Logbook {% endblock %}
+    {% endblock %}
+
+</head>
+<body>
+{% block main %}
+
+     <h1>Logbook for {{ current_user.name }}</h1><br>
+
+    <table id="t01">
+        <tr>
+            <th>Date</th>
+            <th>Aircraft Type</th>
+            <th>Aircraft Ident</th>
+            <th>From</th>
+            <th>To</th>
+            <th>T/O</th>
+            <th>LND</th>
+            <th>Flight Time</th>
+            <th>RMKS</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+
+ {% for log in data %}
+        <tr>
+            <th>{{ Date[loop.index - 1] }}</th>
+            <th>{{ AirType[loop.index - 1] }}</th>
+            <th>{{ AirIden[loop.index - 1] }}</th>
+            <th>{{ Dep[loop.index - 1] }}</th>
+            <th>{{ Arr[loop.index - 1] }}</th>
+            <th>{{ NoT[loop.index - 1] }}</th>
+            <th>{{ NoL[loop.index - 1] }}</th>
+            <th>{{ Time[loop.index - 1] }}</th>
+            <th>{{ remarks[loop.index - 1] }}</th>
+            <th><form action="/Update" method="post"><input class="button1" type="submit" value="Update"><input class="button1" name="Ident" type="hidden" value='{{ Did[loop.index - 1] }}'></form></th>
+            <th><form action="/Delete" method="post"><input class="button1" type="submit" value="Delete"><input class="button1" name="Ident" type="hidden" value='{{ Did[loop.index - 1] }}'></form></th>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+    <form action="/NavCreLog", method="Post">
+    <br>
+    <input class="button" type="submit" value="New Log">
+    </form>
+    <br>
+    <form action="/logout">
+    <br>
+    <input class=button type="submit" value="Logout">
+    </form>
+
+{% endblock %}
+</body>
+</html>

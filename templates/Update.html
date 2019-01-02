@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends "Parent.html" %}
+    <meta charset="UTF-8">
+    {% block head %}
+        {% block title %} New Log Entry {% endblock %}
+    {% endblock %}
+
+</head>
+<body>
+{% block main %}
+    <h1>New Log Entry</h1>
+    <form action="/DBUpdate" method="post">
+        Date: <input type="date" name="Date" value="{{ Date }}"><br>
+        <br>
+        Aircraft Type: <input type="text" name="AirType" value="{{ AirType }}"><br>
+        <br>
+        Aircraft Ident: <input type="text" name="AirIdent" value="{{ AirIden }}"><br>
+        <br>
+        From (Airport): <input type="text" name="From" maxlength="4" value="{{ Dep }}"><br>
+        <br>
+        To (Airport): <input type="text" name="To" maxlength="4" value="{{ Arr }}"><br>
+        <br>
+        Number of Takeoffs: <input type="number" name="Takeoff" value="{{ NoT }}"><br>
+        <br>
+        Number of Landings: <input type="number" name="Landing" value="{{ NoL }}"><br>
+        <br>
+        Flight Time: <input type="time" name="FlightTime" value="{{ Time }}"><br>
+        <br>
+        Remarks <br>
+        <textarea rows="4" cols="50" name="Rmk" >{{ remarks }}</textarea>
+        <br>
+        <input type="hidden" name="ident" value="{{ Did }}">
+        <input type="submit" value="File Log">
+    </form>
+
+{% endblock %}
+</body>
+</html>

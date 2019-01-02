@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends "Parent.html" %}
+    <meta charset="UTF-8">
+    {% block head %}
+        {% block title %} aviation things app {% endblock %}
+    {% endblock %}
+
+</head>
+<body>
+{% block main %}
+    Runway Heading:
+<input type="text" id="RwyHead" maxlength="3"><br>
+<br>
+Wind Speed(Knots):
+<input type="text" id="WindSpeed" maxlength="3"><br>
+<br>
+Wind Heading:
+<input type="text" id="WindHead" maxlength="3"><br>
+    <br>
+<button class="button" type="button" onClick="Caculate()">Results</button>
+
+    <p id="Crosswind"></p>
+    <p id="Headwind"></p>
+
+</div>
+
+
+
+<script>
+    function Caculate() {
+        var RwyHead = document.getElementById("RwyHead").value;
+        var Speed = document.getElementById("WindSpeed").value;
+        var WidHead = document.getElementById("WindHead").value;
+
+
+        angle = WidHead - RwyHead;
+
+
+        angle = angle * (Math.PI / 180)
+
+
+        sinComp = Math.sin(angle)
+        HeadComp = Math.cos(angle)
+
+
+        crossComp =  Speed * (Math.sin(angle))
+        crossComp = Math.abs(crossComp)
+
+        if(crossComp < 0.5){
+            crossComp = 0
+        }
+
+        HW = Speed * (Math.cos(angle))
+        HW = Math.abs(HW)
+
+        if(HW < 0.5){
+            HW = 0
+        }
+
+        HW = Math.round(HW * 100) / 100
+        crossComp = Math.round(crossComp * 100) / 100
+
+        Directon = ""
+        HeadOrTail = ""
+
+
+
+
+        console.log("angle" + angle)
+        console.log("C:" + crossComp)
+        console.log("HW: " + HW)
+
+        var CWelement = document.getElementById("Crosswind");
+        var HWelement = document.getElementById("Headwind")
+        CWelement.innerHTML = "Crosswind: " + crossComp;
+        HWelement.innerHTML = "Headwind/Tailwind: " + HW;
+
+
+    }
+</script>
+
+
+{% endblock %}
+</body>
+</html>

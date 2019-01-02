@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <head>
+    {% extends "Parent.html" %}
+    <meta charset="UTF-8">
+    {% block head %}
+        {% block title %}Account{% endblock %}
+    {% endblock %}
+
+</head>
+</head>
+<body>
+{% block main %}
+    <h1>Log into your account!</h1>
+    <form action="/login" method="post">
+        Username: <input type="text" name="Username" value=""><br>
+        <br>
+        Password: <input type="password" name="Password" value=""><br>
+        <br>
+        <input class="button" type="submit"value="Login">
+    </form>
+
+
+    <p>{{ Message }}</p>
+
+    <h1>Need an account? Create one below!</h1>
+    <form action="/createUser" method="post">
+        Username: <input type="text" name="Username" value="{{ username }}"><br>
+        <br>
+        Name: <input type="text" name="Name" value="{{ name }}"><br>
+        <br>
+        Password: <input type="password" name="Password" value=""><br>
+        <br>
+        Verify Password: <input type="password" name="PassVerify" value=""><br>
+        <br>
+        <input class="button" type="submit" value="Create Account">
+
+    </form>
+    {{ CreateMessage }}
+    {% endblock %}
+
+</body>
+</html>
